@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Canin | Galeria</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>ROYAL CANIN®</h1>
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="#galeria">Galeria</a>
+        </nav>
+    </header>
+
+    <main id="galeria">
+
+        <div class="abas">
+            <button class="ativo" onclick="filtrar('todos', this)">Todos</button>
+            <button onclick="filtrar('caes', this)">Cães</button>
+        </div>
+
+        <div class="galeria">
+
+            <div class="imagem caes">
+                <img src="1.png" alt="Border Collie">
+            </div>
+
+            <div class="imagem caes">
+                <img src="2.png" alt="Pinscher">
+            </div>
+
+            <div class="imagem caes">
+                <img src="3.png" alt="Shih Tzu">
+            </div>
+
+            <div class="imagem caes">
+                <img src="4.png" alt="Pug">
+            </div>
+
+            <div class="imagem caes">
+                <img src="#" alt="Pastor Alemão">
+            </div>    
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>ROYAL CANIN® | Saúde através da nutrição.</p>
+    </footer>
+
+    <script>
+        function filtrar(categoria, botao) {
+
+            const imagens = document.querySelectorAll('.imagem');
+            const botoes = document.querySelectorAll('.abas button');
+
+            botoes.forEach(b => b.classList.remove('ativo'));
+
+            botao.classList.add('ativo');
+
+            imagens.forEach(imagem => {
+
+                if (categoria === 'todos' ||
+                    imagem.classList.contains(categoria)) {
+
+                    imagem.style.display = 'block';
+
+                } else {
+
+                    imagem.style.display = 'none';
+
+                }
+
+            });
+        }
+    </script>
+
+</body>
+</html>
